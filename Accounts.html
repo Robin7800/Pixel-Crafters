@@ -1,0 +1,84 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Account Page</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <div class="container">
+        <div class="sidebar">
+            <h2>Account</h2>
+            <ul>
+                <li><a href="#" onclick="showTab('profile')">Profile Information</a></li>
+                <li><a href="#" onclick="showTab('orders')">Order History</a></li>
+                <li><a href="#" onclick="showTab('billing')">Billing Information</a></li>
+                <li><a href="#" onclick="showTab('password')">Change Password</a></li>
+                <li><a href="#" onclick="logout()">Logout</a></li>
+            </ul>
+        </div>
+
+        <div class="content">
+            <!-- Profile Information Tab -->
+            <div id="profile" class="tab-content">
+                <h3>Profile Information</h3>
+                <form id="profile-form">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" value="John Doe" required>
+
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" value="john.doe@example.com" required>
+
+                    <button type="submit">Save Changes</button>
+                </form>
+            </div>
+
+            <!-- Order History Tab -->
+            <div id="orders" class="tab-content">
+                <h3>Order History</h3>
+                <ul>
+                    <li>Order #12345 - $99.99 - <span>Shipped</span></li>
+                    <li>Order #12346 - $49.99 - <span>Delivered</span></li>
+                    <li>Order #12347 - $89.99 - <span>Processing</span></li>
+                </ul>
+            </div>
+
+            <!-- Billing Information Tab -->
+            <div id="billing" class="tab-content">
+                <h3>Billing Information</h3>
+                <form id="billing-form">
+                    <label for="address">Address:</label>
+                    <input type="text" id="address" name="address" value="123 Main St, City" required>
+
+                    <label for="credit-card">Credit Card:</label>
+                    <input type="text" id="credit-card" name="credit-card" value="**** **** **** 1234" required>
+
+                    <button type="submit">Update Billing</button>
+                </form>
+            </div>
+
+            <!-- Change Password Tab -->
+            <div id="password" class="tab-content">
+                <h3>Change Password</h3>
+                <form id="password-form">
+                    <label for="current-password">Current Password:</label>
+                    <input type="password" id="current-password" name="current-password" required>
+
+                    <label for="new-password">New Password:</label>
+                    <input type="password" id="new-password" name="new-password" required>
+
+                    <label for="confirm-password">Confirm New Password:</label>
+                    <input type="password" id="confirm-password" name="confirm-password" required>
+
+                    <button type="submit">Change Password</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
